@@ -7,8 +7,7 @@ export function usePiniaStore (piniaAction: string, result: unknown) {
 
   for (const piniaStore of getStores()) {
     if (piniaStore.$id === namespace) {
-      piniaStore[action](result)
-      return
+      return piniaStore[action](result)
     }
   }
   consola.error('pinia request failed')

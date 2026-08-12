@@ -266,17 +266,17 @@ export const Globals = Object.freeze({
     }
   },
   MOONRAKER_COMPONENTS: {
-    auth: { name: 'authorization', dispatch: 'auth/init' },
-    power: { name: 'power', dispatch: 'power/init' },
-    updateManager: { name: 'update_manager', dispatch: 'version/init' },
-    history: { name: 'history', dispatch: 'history/init' },
-    database: { name: 'database', dispatch: 'database/init' },
-    timelapse: { name: 'timelapse', dispatch: 'timelapse/init' },
-    announcements: { name: 'announcements', dispatch: 'announcements/init' },
-    webcams: { name: 'webcam', dispatch: 'webcams/init' },
-    jobQueue: { name: 'job_queue', dispatch: 'jobQueue/init' },
-    spoolman: { name: 'spoolman', dispatch: 'spoolman/init' },
-    sensors: { name: 'sensor', dispatch: 'sensors/init' }
+    auth: { name: 'authorization', dispatch: 'auth/init', store: 'vuex' },
+    power: { name: 'power', dispatch: 'power/init', store: 'vuex' },
+    updateManager: { name: 'update_manager', dispatch: 'version/init', store: 'vuex' },
+    history: { name: 'history', dispatch: 'history/init', store: 'vuex' },
+    database: { name: 'database', dispatch: 'database/init', store: 'pinia' },
+    timelapse: { name: 'timelapse', dispatch: 'timelapse/init', store: 'vuex' },
+    announcements: { name: 'announcements', dispatch: 'announcements/init', store: 'vuex' },
+    webcams: { name: 'webcam', dispatch: 'webcams/init', store: 'vuex' },
+    jobQueue: { name: 'job_queue', dispatch: 'jobQueue/init', store: 'vuex' },
+    spoolman: { name: 'spoolman', dispatch: 'spoolman/init', store: 'vuex' },
+    sensors: { name: 'sensor', dispatch: 'sensors/init', store: 'vuex' }
   },
   // Ordered by weight.
   CONFIG_SERVICE_MAP: [

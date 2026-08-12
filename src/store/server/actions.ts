@@ -9,6 +9,7 @@ import { EventBus } from '@/eventBus'
 import i18n from '@/plugins/i18n'
 import { gte, valid } from 'semver'
 import type { ObjectWithRequest } from '@/plugins/socketClient'
+import { usePiniaStore } from '@/stores/helpers/parseVuexConventions'
 
 let retryTimeout: ReturnType<typeof setTimeout>
 
@@ -38,7 +39,9 @@ export const actions = {
       const promises = Object.values(Globals.MOONRAKER_COMPONENTS)
         .map((component) => (
           payload.components.includes(component.name)
-            ? dispatch(component.dispatch, undefined, { root: true })
+            ? component.store === 'pinia'
+              ? usePiniaStore(component.dispatch, undefined)
+              : dispatch(component.dispatch, undefined, { root: true })
             : null
         ))
         .filter(promise => promise)

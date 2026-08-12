@@ -22,7 +22,6 @@ import type { jobQueue } from './jobQueue'
 import type { spoolman } from './spoolman'
 import type { mmu } from './mmu'
 import type { sensors } from './sensors'
-import type { database } from './database'
 import type { afc } from './afc'
 import type { storeOptions } from '.'
 
@@ -50,7 +49,6 @@ type RootModulesType = {
   spoolman: typeof spoolman,
   mmu: typeof mmu,
   sensors: typeof sensors,
-  database: typeof database,
   afc: typeof afc
 }
 

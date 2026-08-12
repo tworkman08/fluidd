@@ -106,11 +106,12 @@
 import { Component, Mixins } from 'vue-property-decorator'
 import { SocketActions } from '@/api/socketActions'
 import StateMixin from '@/mixins/state'
+import { useDatabaseStore } from '@/stores/database'
 
 @Component({ })
 export default class MoonrakerDatabaseCard extends Mixins(StateMixin) {
   get backups (): string[] {
-    return this.$typedGetters['database/getBackups']
+    return useDatabaseStore().getBackups
   }
 
   async handleRestoreBackup (filename: string) {

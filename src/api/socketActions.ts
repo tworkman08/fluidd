@@ -467,7 +467,7 @@ export const SocketActions = {
   serverDatabaseList (options?: NotifyOptions) {
     return baseEmit<Moonraker.Database.ListResponse>(
       'server.database.list', {
-        dispatch: 'database/onServerDatabaseList',
+        pinia: 'database/onServerDatabaseList',
         wait: Waits.onDatabaseList,
         ...options
       }
@@ -486,7 +486,7 @@ export const SocketActions = {
   serverDatabasePostBackup (filename: string, options?: NotifyOptions) {
     return baseEmit<Moonraker.Database.PostBackupResponse>(
       'server.database.post_backup', {
-        dispatch: 'database/onServerDatabasePostBackup',
+        pinia: 'database/onServerDatabasePostBackup',
         wait: `${Waits.onDatabasePostBackup}/${filename}`,
         ...options,
         params: {
@@ -511,7 +511,7 @@ export const SocketActions = {
   serverDatabaseDeleteBackup (filename: string, options?: NotifyOptions) {
     return baseEmit<Moonraker.Database.DeleteBackupResponse>(
       'server.database.delete_backup', {
-        dispatch: 'database/onServerDatabaseDeleteBackup',
+        pinia: 'database/onServerDatabaseDeleteBackup',
         wait: `${Waits.onDatabaseDeleteBackup}/${filename}`,
         ...options,
         params: {
